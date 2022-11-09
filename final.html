@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Stack operation</title>
+   <link href="style.css" rel="stylesheet" type="text/css" />
+
+   <style>
+      body{
+         background-color:rgb(27, 27, 27);
+         text-align: center;
+      }
+      p{
+         color:rgb(255, 255, 255);
+         font-size: 25px;
+      }
+      size{height: 20px;}
+      align{text-align: center;}
+      pad{margin:15px;}
+      span{font-size:25px;
+      color:rgb(233, 233, 233);
+      background-color:rgb(37, 37, 37);}
+   </style>
+</head>
+<script>
+      var top = -1;
+      const stack = [];
+      let ele = 0;
+
+   function main() {
+         let n = parseInt(document.getElementById('n').value);
+         document.getElementById('result').innerHTML = stack;
+      }
+   function push(){
+         if (top==n){
+            console.error("Stack overflow");
+         }
+         var ele= parseInt(document.getElementById('ele').value);;
+         stack.push(ele)
+         document.getElementById('result').innerHTML = stack;
+         top++;
+   }
+   function pop() {
+      if (top == -1) {
+         console.error("Stack underflow");
+      }
+         var ele = stack[stack.length];
+         stack.pop();
+         document.getElementById('result').innerHTML = stack;
+      }
+</script>
+<body>
+   <div class = "container">
+      <p>Enter the size of stack</p>
+      <input type="number " value="" id="n">
+      <div class="button pad "><br>
+         <input type="button" value="submit" onclick="return main();">
+      </div>
+      <p>Enter the operation to be performed</p>
+      <input type="number " value="" id="ele">
+      <div class="button pad  "><br><br>
+         <input type="button" value="push" onclick="return push();">
+         <input type="button" value="pop" onclick="return pop();">
+
+      </div>
+   </div>
+   <span>
+   <p>Stack =</p>
+   <span id="result"></span>
+   </span>
+</body>
+</html>
